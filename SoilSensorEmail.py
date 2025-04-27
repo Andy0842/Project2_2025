@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 #Agile Raspberry Pi Plant Moisture Sensor with Email Notification
 #This program will send an email every three hours to report the condition of the soil and whether watering is required.
 #Date: 23/4/25
@@ -14,19 +12,16 @@ import time
 from email.message import EmailMessage
 from datetime import datetime
 
-# ===== Hardware Set =====
-SENSOR_PIN = 4          # GPIO4
+SENSOR_PIN = 4          
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(SENSOR_PIN, GPIO.IN)
 
-# ===== Email Set =====
 SMTP_SERVER = 'smtp.163.com'
 SMTP_PORT = 25
 SENDER_EMAIL = "nuist_202283890018@163.com"
 SENDER_PASSWORD = "GNM9umMuUfxHTKaG"  
 RECEIVER_EMAIL = "nuist_202283890018@163.com"
 
-# ===== Time Set =====
 TARGET_HOURS = {9, 12, 15, 18, 21}  
 last_triggered_hour = -1  
 
